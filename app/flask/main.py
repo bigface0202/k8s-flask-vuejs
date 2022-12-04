@@ -1,10 +1,10 @@
 import os
 from flask import Flask, render_template
 
-# Vueでビルド先のディレクトリを指定
+# Specify the directory of Vue.js building files
 app = Flask(__name__, static_folder='../vue/dist/static', template_folder='../vue/dist/templates')
 
-# SPA対応
+# For SPA
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
